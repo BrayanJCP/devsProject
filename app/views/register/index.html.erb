@@ -1,2 +1,40 @@
-<h1>Register#index</h1>
-<p>Find me in app/views/register/index.html.erb</p>
+<div class="row">
+    <div class="col-md-6">
+        <form method="POST" action="<%= crear_usuario_path%>">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" class="form-control" id="username" name="user[username]" placeholder="Usuario">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="user[email]" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefono</label>
+                <input type="number" class="form-control" id="phone" name="user[phone]" placeholder="Telefono">
+            </div>
+            <div class="form-group">
+                <label for="role"></label>
+                <select name="user[role_id]" class="form-control" id="role">
+                    <% for role in @roles %>
+                        <option value="<%= role.id %>">
+                            <%= role.name%>
+                        </option>
+                        <% end %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" name="user[password]" id="exampleInputPassword1" placeholder="Contraseña">
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h1>Registro</h1>
+        <p>Queremos que seas parte de nuestra comunidad.</p>
+        <p>Nosotros te ofrecemos la opurtunidad de que puedas mostrar de lo que eres capaz de enseñar.</p>
+        <p>Encuentra tu tutor y fortalece tus conocimientos</p>
+    </div>
+</div>

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'event/index'
   get 'register/index'
   get 'home/index'
   get 'login/index'
+  post 'crear/usuario', to: "register#create"
+  post 'crear/evento', to: "event#createEvent"
   root 'login#index'
 
   resources :user

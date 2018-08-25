@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form method="POST" action="<%= crear_evento_path%>">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="text" hidden class="form-control" id="user" name="event[user_id]" value="1" placeholder="Usuario">
+            <div class="form-group">
+                <label for="title">Titulo</label>
+                <input type="text" class="form-control" id="title" name="event[title]" placeholder="Titulo">
+            </div>
+            <div class="form-group">
+                <label for="describe">Descripcion</label>
+                <textarea class="form-control" id="describe" name="event[describe]" placeholder="Descripcion"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,3 +1,15 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.list{
+    li{
+        list-style: none;
+        div{
+            padding: 10px;
+        }
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+    }
+}
