@@ -10,12 +10,19 @@ class Api::ServiceController < ApiController
         unless event_params.nil?
           Event.create(event_params)
         end
-        redirect_to :controller => 'home', :action => 'index'
       end
       def getEvents
         @events=Event.all
       end
       def getRoles
         @roles=Role.all        
+      end
+      def getUsers
+        @users=User.all        
+      end
+      def getUser
+        user_params = params.require(:user).permit(:id) 
+        @user=User.find(user_params[:id])
+        puts(@user)
       end
 end
