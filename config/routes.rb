@@ -9,5 +9,13 @@ Rails.application.routes.draw do
 
   resources :user
   resources :event
+
+  namespace :api do
+      post 'user_login' => 'user_token#create'
+      post 'user_register' => 'service#createUser'
+      post 'event_list' => 'service#getEvents'
+      post 'event_create' => 'service#createEvent'
+      post 'role_list' => 'service#getRoles'
+    end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
