@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post 'event_create' => 'service#createEvent'
       post 'role_list' => 'service#getRoles'
       post 'user_get_user' => 'service#getUser'
+      post 'user_list' => 'service#getUsers'
     end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
